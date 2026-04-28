@@ -1,0 +1,195 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.header {
+    background: #4f7fb5;
+    color: white;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-right a {
+    color: white;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+#id_nav_profile {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 20px;
+}
+
+#id_site_name {
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.nav {
+    float: right;
+    font-size: 20px;
+}
+
+.nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: underline;
+}
+
+#id_page_name {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+
+#id_register_link {
+    color: white;
+    text-decoration: underline;
+    align-self: right;
+}
+
+#id_user_picture {
+    height: 250px;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+#id_bio_input_text {
+    border: 1px solid black;
+    padding: 20px;
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+#id_profile_picture {
+    margin-bottom: 10px;
+}
+
+#id_update_profile_button{
+    margin-bottom: 10px;
+}
+
+#id_user_bio {
+    border: 1px solid black;
+    padding: 20px;
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+#id_unfollow {
+    background-color: lightgrey;
+    border-radius: 10px;
+    border: 1px solid black;
+    color: black;
+    padding: 15px;
+}
+
+#id_follow {
+    background-color: lightblue;
+    border-radius: 10px;
+    border: 1px solid black;
+    color: black;
+    padding: 15px;
+}
+
+#id_login_button {
+    margin-left: 80px;
+}
+
+.profile_link {
+    color: black;
+    text-decoration: underline;
+}
+
+.register-form .form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+.register-form .form-row label {
+    width: 160px;
+    text-align: left;
+    margin-right: 12px;
+}
+.register-form {
+    width: 520px;
+}
+
+.register-form .form-row input {
+    width: 170px;
+}
+
+#id_register_button {
+    margin-left: 172px;
+}
+
+
+
+
+
+#id_post_list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+[id^="id_post_div_"] {
+    margin-bottom: 16px; 
+}
+
+[id^="id_post_profile_"],
+[id^="id_post_text_"],
+[id^="id_post_date_time_"] {
+    font-size: 18px;
+}
+
+[id^="id_post_date_time_"] {
+    font-style: italic;
+    margin-left: 8px;
+}
+
+[id^="id_comment_list_"] {
+    margin-top: 8px;
+    margin-left: 30px; 
+}
+
+[id^="id_comment_div_"] {
+    margin-top: 4px;
+}
+
+[id^="id_comment_profile_"],
+[id^="id_comment_text_"],
+[id^="id_comment_date_time_"] {
+    font-size: 18px;
+}
+
+[id^="id_comment_date_time_"] {
+    font-style: italic;
+    margin-left: 8px;
+}
+
+[id^="id_post_div_"] {
+    margin-left: 0;
+}
+
+span[id^="id_comment_profile_"] {
+    font-style: italic;
+}
+
+span[id^="id_comment_text_"] {
+    font-style: normal;
+}

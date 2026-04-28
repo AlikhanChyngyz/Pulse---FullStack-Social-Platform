@@ -1,0 +1,63 @@
+{% extends "socialnetwork/base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block nav %}
+<a id="id_login_link" href="{% url 'login' %}">
+    Login
+</a>
+{% endblock %}
+
+{% block page_name %}
+Register
+{% endblock %}
+
+{% block content %}
+
+{{ form.non_field_errors }}
+
+<form method="post" class="register-form">
+    {% csrf_token %}
+
+    <div class="form-row">
+        <label for="id_username">Username:</label>
+        {{ form.username }}
+        {{ form.username.errors }}
+    </div>
+
+    <div class="form-row">
+        <label for="id_password">Password:</label>
+        {{ form.password }}
+        {{ form.password.errors }}
+    </div>
+
+    <div class="form-row">
+        <label for="id_confirm_password">Confirm:</label>
+        {{ form.confirm_password }}
+        {{ form.confirm_password.errors }}
+    </div>
+
+    <div class="form-row">
+        <label for="id_email">Email:</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+    </div>
+
+    <div class="form-row">
+        <label for="id_first_name">First Name:</label>
+        {{ form.first_name }}
+        {{ form.first_name.errors }}
+    </div>
+
+    <div class="form-row">
+        <label for="id_last_name">Last Name:</label>
+        {{ form.last_name }}
+        {{ form.last_name.errors }}
+    </div>
+
+    <button id="id_register_button" type="submit">
+        Submit
+    </button>
+</form>
+
+{% endblock %}

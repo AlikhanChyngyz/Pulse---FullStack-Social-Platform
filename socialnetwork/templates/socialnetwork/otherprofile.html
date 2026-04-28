@@ -1,0 +1,41 @@
+{% extends "socialnetwork/base.html" %}
+{% load static %}
+
+{% block title %}
+    {{ profile_user.first_name }} {{ profile_user.last_name }}'s Profile
+{% endblock %}
+
+{% block page_name %}
+    Profile Page for {{ profile_user.first_name }} {{ profile_user.last_name }}
+{% endblock %}
+
+{% block content %}
+<section>
+    <div>
+        <img id="id_user_picture"
+             {% if profile.profile_picture %}
+                 src="{{ profile.profile_picture.url }}"
+             {% else %}
+                 src="{% static 'socialnetwork/example.png' %}"
+             {% endif %}
+             alt="Profile picture">
+
+        <div id="id_user_bio">
+            {{ profile.bio }}
+        </div>
+    </div>
+    {% if profile_user != user %}
+        {% if profile_user in user.profile.following.all %}
+            <a id="id_unfollow"
+            href="{% url 'unfollow' profile_user.username %}">
+                Unfollow
+            </a>
+        {% else %}
+            <a id="id_follow"
+            href="{% url 'follow' profile_user.username %}">
+                Follow
+            </a>
+        {% endif %}
+    {% endif %}
+</section>
+{% endblock %}

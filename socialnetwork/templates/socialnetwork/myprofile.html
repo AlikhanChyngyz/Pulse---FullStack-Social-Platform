@@ -1,0 +1,53 @@
+{% extends "socialnetwork/base.html" %}
+{% load static %}
+
+{% block title %}My Profile{% endblock %}
+{% block page_name %}Profile Page for {{ user.first_name }} {{ user.last_name }} {% endblock %}
+
+{% block content %}
+
+    <section>
+        <div>
+            <img id="id_user_picture"
+                {% if profile.profile_picture %}
+                    src="{{ profile.profile_picture.url }}"
+                {% else %}
+                    src="{% static 'socialnetwork/example.png' %}"
+                {% endif %}
+                alt="Profile picture">
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div>
+                    <textarea id="id_bio_input_text" name="bio" rows="4"> {{ profile.bio }} </textarea>
+                </div>
+
+                <div>
+                    {{ form.profile_picture }}
+                </div>
+
+                <button id="id_update_profile_button" type="submit">
+                    Submit
+                </button>
+            </form>
+
+        </div>
+
+        <div>
+            <div>You are following:</div>
+            <ul>
+                {% for u in profile.following.all %}
+                    <li>
+                        <a id="id_profile_link_{{ u.username }}" class="profile_link"
+                        href="{% url 'other_profile' u.username %}">
+                            {{ u.first_name }} {{ u.last_name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </section>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+[Django]
+secret=replace-with-django-secret
+
+[MYSQL]
+db=django
+user=replace-with-mysql-username
+password=replace-with-mysql-password
+host=localhost
+port=3306
+
+[ALLOWED_HOSTS]
+host1=localhost
+host2=127.0.0.1
+host3=replace-with-ec2-ip

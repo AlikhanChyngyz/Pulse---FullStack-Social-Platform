@@ -1,0 +1,17 @@
+{% extends "socialnetwork/base.html" %}
+{% load static %}
+
+{% block title %}Follower Stream{% endblock %}
+{% block page_name %}Follower Stream{% endblock %}
+
+{% block content %}
+    <form style="display:none;">
+        {% csrf_token %}
+    </form>
+
+    <div id="id_post_list"></div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'socialnetwork/follower.js' %}"></script>
+{% endblock %}

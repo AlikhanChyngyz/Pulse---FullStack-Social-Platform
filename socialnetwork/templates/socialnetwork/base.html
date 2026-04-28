@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Blog Master{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'socialnetwork/socialnetwork.css' %}">
+</head>
+
+<body>
+    <div id="id_header_div" class="header">
+
+        <div class="header-left">
+            <span id="id_site_name">Blog Master</span>
+        </div>
+
+        <div class="header-right">
+            {% block nav %}
+                <div>
+                    <a id="id_nav_profile" href="/profile">{{ user.first_name }} {{ user.last_name }}</a>
+                </div>
+                <div class="nav">
+                    <a id="id_nav_global_stream" href="/global">Global</a>
+                    <a id="id_nav_follower_stream" href="/follower">Follower</a>
+                    <a id="id_nav_logout" href="/logout">Logout</a>
+                </div>
+            {% endblock %}
+        </div>
+
+    </div>
+
+    <h1 id="id_page_name">
+        {% block page_name %}{% endblock %}
+    </h1>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>
